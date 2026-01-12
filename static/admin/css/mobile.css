@@ -1,0 +1,53 @@
+/* Responsive fix untuk FilteredSelectMultiple di halaman Group Permission */
+@media (max-width: 768px) {
+  .selector {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .selector .selector-available,
+  .selector .selector-chosen {
+    width: 100% !important;
+    float: none !important;
+  }
+
+  .selector select {
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 220px !important; /* bisa disesuaikan */
+  }
+
+  .selector .selector-chooser {
+    width: 100% !important;
+    text-align: center;
+    margin: 0 !important;
+  }
+
+  .selector .selector-chooser li {
+    display: inline-block;
+    margin: 0 8px;
+  }
+
+  .selector .helptext {
+    display: block;
+    margin-top: 6px;
+  }
+}
+@media (max-width: 768px) {
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+  }
+
+  .breadcrumbs {
+    position: sticky;
+    top: 56px; /* sesuaikan tinggi navbar */
+    z-index: 99998;
+    background: hsl(var(--b1)); /* warna DaisyUI base-100 */
+    padding: 10px 16px;
+  }
+}
