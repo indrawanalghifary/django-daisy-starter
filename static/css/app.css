@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@import "tailwindcss";
+
+/* Scan template global di root /templates */
+@source "../../templates/**/*.html";
+
+/* Scan template app dashboard */
+@source "../../dashboard/templates/**/*.html";
+
+@source "../../templates/*.html";
+
+/* Scan template app dashboard */
+@source "../../dashboard/templates/*.html";
+
+
+/* (opsional) scan file python kalau ada class dinamis atau string */
+@source "../../dashboard/**/*.py";
+@source "../../config/**/*.py";
