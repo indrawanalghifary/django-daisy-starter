@@ -1,0 +1,31 @@
+
+
+{% extends "base.html" %}
+{% block section %}
+{% endblock section %}
+{% block stats %}
+{% endblock stats %}
+{% block main %}
+    <!-- Data Table -->
+    <div class="xl:col-span-2 glass-card rounded-2xl p-6">
+        {% block table %}
+        {% endblock table %}
+    </div>
+
+    <!-- Right Widget -->
+    <div class="glass-card rounded-2xl p-6">
+        {% block widget %}
+        {% endblock widget %}
+    </div>
+    <!-- Data Table -->
+    <div class="xl:col-span-2 glass-card rounded-2xl p-6">
+        {% block table2 %}
+        {% endblock table2 %}
+    </div>
+
+    <!-- Right Widget -->
+    <div class="glass-card rounded-2xl p-6">
+        {% block widget2 %}
+        {% endblock widget2 %}
+    </div>
+{% endblock main %}

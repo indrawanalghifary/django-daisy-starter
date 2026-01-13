@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Django App</title>
-    {% load static %}
-    <link href="{% static 'css/output.css' %}" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <button class="btn btn-primary">Hello daisyUI</button>
-</body>
-</html>
+{% extends 'content.html' %}
+{% block title %}Dashboard{% endblock title %}
+
+{% block section %}{% include 'dummy/section.html' with user=user app_name=app_name %}{% endblock section %}
+{% block stats %}{% include 'dummy/stats.html' %}{% endblock stats %}
+{% block widget %}{% include 'dummy/right_widget.html' %} {% endblock widget %}
+{% block table %}{% include "dummy/table.html" %}{% endblock table %}
+{% comment %} {% block widget2 %}{% include 'dummy/widget_cpu.html' %}{% endblock widget2 %} {% endcomment %}
+
+

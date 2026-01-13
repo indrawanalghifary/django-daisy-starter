@@ -64,6 +64,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "config.context_processors.sidebar_menu",
             ],
         },
     },
@@ -150,3 +151,21 @@ DAISY_SETTINGS = {
         },
     },
 }
+
+SIDEBAR_MENU = [
+    {
+        "section": None,
+        "items": [
+            {"name": "Dashboard", "icon": "layout", "url": "dashboard"},
+            {"name": "Analitik", "icon": "trending-up", "url": "analitik", "badge": 3},
+            {"name": "Pesan", "icon": "message-square", "url": "pesan", "badge": 4},
+        ],
+    },
+    {
+        "section": "SISTEM",
+        "items": [
+            {"name": "Pengaturan", "icon": "settings", "url": "home"},
+            {"name": "Log Database", "icon": "database", "url": "https://docs.example.com"},
+        ],
+    },
+]

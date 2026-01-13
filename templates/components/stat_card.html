@@ -1,0 +1,22 @@
+<div class="glass-card p-6 rounded-2xl">
+  <div class="flex justify-between items-start">
+    <div class="bg-{{ icon_bg }}/10 p-3 rounded-xl text-{{ icon_bg }}">
+      <i data-lucide="{{ icon }}"></i>
+    </div>
+
+    {% if percent %}
+      <span class="text-{{ percent_color }} text-xs font-bold">
+        {{ percent }}
+      </span>
+    {% endif %}
+  </div>
+
+  <div class="mt-4">
+    <div class="opacity-60 text-xs uppercase tracking-wider font-bold">
+      {{ label }}
+    </div>
+    <div class="text-2xl font-bold mt-1">
+      {{ value }}
+    </div>
+  </div>
+</div>

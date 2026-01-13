@@ -1,0 +1,27 @@
+{% with ACTIVE="active bg-primary/10 text-primary border border-primary/20 font-semibold py-3 px-4" NORMAL="py-3 px-4 hover:bg-base-content/5 transition-all" %}
+
+  {% for block in SIDEBAR_MENU %}
+
+    {% if block.section %}
+      <div class="divider opacity-50 uppercase tracking-widest">{{ block.section }}</div>
+    {% endif %}
+
+    {% for item in block.items %}
+      <li>
+        <a href="{{ item.item_url }}"
+           {% if item.is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+           class="{% if not item.is_external and request.resolver_match.view_name == item.url %}{{ ACTIVE }}{% else %}{{ NORMAL }}{% endif %}">
+
+          <i data-lucide="{{ item.icon }}" class="w-5 h-5"></i>
+          {{ item.name }}
+
+          {% if item.badge %}
+            <span class="badge badge-sm badge-secondary">{{ item.badge }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+
+  {% endfor %}
+
+{% endwith %}
