@@ -65,6 +65,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "config.context_processors.sidebar_menu",
+                "config.context_processors.app_name",
             ],
         },
     },
@@ -151,6 +152,7 @@ DAISY_SETTINGS = {
         },
     },
 }
+APP_NAME="Panel Admin"
 
 SIDEBAR_MENU = [
     {

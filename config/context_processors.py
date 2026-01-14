@@ -5,9 +5,10 @@
 #     return {"SIDEBAR_MENU": SIDEBAR_MENU}
 
 from django.urls import reverse, NoReverseMatch
-from .settings import SIDEBAR_MENU
+from .settings import SIDEBAR_MENU, APP_NAME
 # from .services.badges import get_badge_counts
-
+def app_name(request):
+    return {"APP_NAME": APP_NAME}
 
 def sidebar_menu(request):
     # badge_counts = get_badge_counts(request.user)
