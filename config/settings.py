@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "dashboard",
     "django_daisy",
+
+    "debug_toolbar",
     "django.contrib.admin",
     "django.contrib.humanize",
     "django.contrib.auth",
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -115,6 +118,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOGIN_REDIRECT_URL = "dashboard"
+LOGOUT_REDIRECT_URL = "login"
+
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
@@ -123,6 +131,10 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 DAISY_SETTINGS = {

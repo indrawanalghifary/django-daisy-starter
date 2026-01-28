@@ -1,20 +1,102 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-@import "tailwindcss";
-
 /* Scan template global di root /templates */
 @source "../../templates/**/*.html";
-
+@source "../../templates/*.html";
 /* Scan template app dashboard */
 @source "../../dashboard/templates/**/*.html";
-
-@source "../../templates/*.html";
-
-/* Scan template app dashboard */
 @source "../../dashboard/templates/*.html";
 
 
 /* (opsional) scan file python kalau ada class dinamis atau string */
 @source "../../dashboard/**/*.py";
 @source "../../config/**/*.py";
+
+
+/* =========================
+   BASE
+   ========================= */
+@layer base {
+  body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    transition: background 0.3s ease, color 0.3s ease !important;
+  }
+
+  /* ===== DARK THEME ===== */
+  html[data-theme="dark"] body {
+    background: radial-gradient(circle at top right, #1e1b4b 0%, #0f172a 70%) !important;
+    color: #f8fafc !important;
+  }
+
+  /* ===== LIGHT THEME (White + Pink: Rose Milk) ===== */
+  html[data-theme="light"] body {
+    background: radial-gradient(
+      circle at top right,
+      #fff1f2 0%,   /* rose-50 */
+      #ffffff 35%,
+      #fdf2f8 70%,  /* pink-50 */
+      #f8fafc 100%  /* slate-50 */
+    ) !important;
+
+    color: #0f172a !important;
+  }
+}
+
+/* =========================
+   COMPONENTS
+   ========================= */
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  html[data-theme="light"] .glass-card {
+    background: rgba(255, 255, 255, 0.78) !important;
+    border: 1px solid rgba(245, 7, 126, 0.18) !important; /* pink soft */
+  }
+
+  .glass-card:hover {
+    border-color: rgba(99, 102, 241, 0.4) !important; /* indigo glow */
+    box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.22) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* Hover khusus light: glow pink */
+  html[data-theme="light"] .glass-card:hover {
+    border-color: rgba(236, 72, 153, 0.35) !important;
+    box-shadow: 0 10px 30px -10px rgba(236, 72, 153, 0.22) !important;
+  }
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #334155 !important;
+    border-radius: 10px !important;
+  }
+
+  /* Light scrollbar (pink soft) */
+  html[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(236, 72, 153, 0.35) !important;
+  }
+
+  html[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 72, 153, 0.55) !important;
+  }
+}
